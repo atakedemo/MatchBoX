@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "matchbox-dev"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1iuy6l00ouuw9"
+s3_prefix = "matchbox-dev"
+region = "ap-northeast-1"
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = []
+confirm_changeset = true
