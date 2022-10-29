@@ -1,0 +1,93 @@
+Description: "Cloudformation template for API Gateway & Lambda."
+Parameters:
+  FunctionName:
+    Type: String
+    Description: "Lambda Function Name"
+Resources:
+  # Lambda
+  Lambda:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      Code: 
+        ZipFile: |
+          def handler(event, context):
+            return {'body': 'Hello World!', 'statusCode': 200}
+      Description: "Lambda function to list NFT"
+      FunctionName: !Sub "${FunctionName}"
+      Handler: index.handler
+      Runtime: python3.8
+      MemorySize: 128
+      Timeout: 30
+      Role: !GetAtt LambdaFunctionRole.Arn
+  
+  LambdaFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: /
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
+  
+  # API Gateway
+  Api:
+    Type: "AWS::ApiGateway::RestApi"
+    Properties:
+      Name: "api_cfn_test"
+ 
+  Resource:
+    Type: "AWS::ApiGateway::Resource"
+    Properties:
+      RestApiId: !Ref Api
+      ParentId: !GetAtt Api.RootResourceId
+      PathPart: !Sub "${FunctionName}"
+    DependsOn:
+      - Api 
+      - Lambda
+  
+  LambdaPermission:
+    Type: "AWS::Lambda::Permission"
+    Properties:
+      FunctionName: !Sub "${FunctionName}"
+      Action: "lambda:InvokeFunction"
+      Principal: "apigateway.amazonaws.com"
+    DependsOn: Resource 
+ 
+  ResourceMethod:
+    Type: "AWS::ApiGateway::Method"
+    Properties:
+      RestApiId: !Ref Api
+      ResourceId: !Ref Resource
+      AuthorizationType: "None"
+      HttpMethod: "GET"
+      Integration:
+        Type: "AWS"
+        IntegrationHttpMethod: "GET"
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:${FunctionName}/invocations"
+        PassthroughBehavior: WHEN_NO_MATCH
+        RequestTemplates:
+          application/json: "{}"
+    DependsOn: LambdaPermission
+ 
+  Deployment:
+    Type: AWS::ApiGateway::Deployment
+    Properties:
+      RestApiId: !Ref Api
+    DependsOn: ResourceMethod
+ 
+  Stage:
+    Type: AWS::ApiGateway::Stage
+    Properties:
+      StageName: demo
+      Description: demo stage
+      RestApiId: !Ref Api
+      DeploymentId: !Ref Deployment
+    DependsOn: Deployment
