@@ -103,7 +103,7 @@ export const getTorophylist = async() => {
   };
 
   //デモ用：宮本さんのアドレスを固定値にする（-> 後で削除する）
-  options.params.owner = '0xD958Ee1d2caFAc2d3D6B495528dEaD1B339896e5';
+  //options.params.owner = '0xD958Ee1d2caFAc2d3D6B495528dEaD1B339896e5';
   
   axios
     .request(options)
