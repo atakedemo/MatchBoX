@@ -98,3 +98,16 @@ nav .navLinks2 li {
   color: white;
 }
 
+/*
+ヘッダー
+*/
+#headerTitle {
+  
+}
+
+#walletButton {
+  text-align: right;
+  float:right;
+  margin-bottom: 50px;
+  line-height: 16px;
+}

@@ -1,7 +1,7 @@
 //import { Network, Alchemy } from "alchemy-sdk";
 import axios from 'axios';
 
-require("dotenv").config();
+//require("dotenv").config();
 const contractAddressMain = "0x8995bd38c2012c04a4e7dd6f3ed61b29b1c43aa2";
 
 //ウォレット（メタマスク）との接続
@@ -84,6 +84,7 @@ export const getCurrentWalletConnected = async () => {
     }
 };
 
+/*
 //トロフィーリストの取得
 export const getTorophylist = async() => {
   //const apiUrl = process.env.RERAT_APP_ALCHEMY_URL;
@@ -141,3 +142,4 @@ export const getOwnerlist = async() => {
       console.error(error);
     });
 }
+*/

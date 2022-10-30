@@ -6,13 +6,15 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 
 function  Main() {
   return (
+    <div className='main'>
     <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={<Login/>} />
+        <Route exact path='/' element={<Portfolio/>} />
         <Route path='/portfolio' element={<Portfolio/>} />
         <Route path='/trophies' element={<Torophies/>}  />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 
