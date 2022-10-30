@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+* html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(16,18,19);
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/***
+ナビゲーションバー 
+***/
+
+nav {
+  position: fixed;
+  width: 170px;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(30,31,36);
+  color: white;
+}
+
+nav .navLinks {
+  display: flex;
+  margin-top: 30px;
+  flex-flow: column;
+  list-style: none;
+}
+
+nav .navLinks li {
+  margin-right: 170px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+nav .navLinks2 {
+  display: flex;
+  margin-top: 400px;
+  flex-flow: column;
+  list-style: none;
+}
+
+nav .navLinks2 li {
+  margin-right: 170px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.portforioContainer {
+  width: 100%;
+  height: 100vh;
+  justify-content: space-evenly;
+}
+
+.title {
+  margin: 0;
+  padding-right: 750px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+.walletConnect{
+  display: flex;
+  flex-flow: column;
+  margin-top: 5%;
+}
+
+.walletConnect button{
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 10px;
+  border: none;
+  padding: 7px;
+  width: 400px;
+  text-align: center;
+  font-size: 16px;
+  background: rgb(74, 122, 211);
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  color: white;
+}
+
