@@ -1,11 +1,9 @@
 import './App.css';
 import { useEffect, useState } from "react";
 import { 
-    connectWallet,
-    getCurrentWalletConnected
+    connectWallet
 } from "./utils/interact.js";
 import  Navbar from "./components/Navbar";
-import Login from './components//Login';
 import Main from './Main';
 
 function App() {

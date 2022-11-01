@@ -3,6 +3,8 @@ import axios from 'axios';
 
 //require("dotenv").config();
 const contractAddressMain = "0x8995bd38c2012c04a4e7dd6f3ed61b29b1c43aa2";
+const alchemyKeyMain = "XscvLAKJpQlvfnMFXa9uRQmJgD5pji3V"
+
 
 //ウォレット（メタマスク）との接続
 export const connectWallet = async () => {
@@ -84,12 +86,10 @@ export const getCurrentWalletConnected = async () => {
     }
 };
 
-/*
 //トロフィーリストの取得
 export const getTorophylist = async() => {
-  //const apiUrl = process.env.RERAT_APP_ALCHEMY_URL;
   const apiUrl = "https://polygon-mainnet.g.alchemy.com/nft/v2/"
-  const apiKey = process.env.REACT_APP_ALCHEMY_KEY_MAIN;
+  const apiKey = alchemyKeyMain;
 
   const options = {
     method: 'GET',
@@ -102,15 +102,14 @@ export const getTorophylist = async() => {
     },
     headers: {accept: 'application/json'}
   };
-
-  //デモ用：宮本さんのアドレスを固定値にする（-> 後で削除する）
-  //options.params.owner = '0xD958Ee1d2caFAc2d3D6B495528dEaD1B339896e5';
-  
   axios
     .request(options)
     .then(function (response) {
-      console.log('Alchemy Test!!!!!!!!!!!');
       console.log(response.data);
+      if(response.data.totalCount>0){
+        return response.data.ownedNfts;
+      }
+      
     })
     .catch(function (error) {
       console.error(error);
@@ -120,7 +119,7 @@ export const getTorophylist = async() => {
 //トロフィー所有者のアドレス一覧取得
 export const getOwnerlist = async() => {
   const apiUrl = "https://polygon-mainnet.g.alchemy.com/nft/v2/"
-  const apiKey = process.env.REACT_APP_ALCHEMY_KEY_MAIN;
+  const apiKey = alchemyKeyMain;
 
   const options = {
     method: 'GET',
@@ -142,4 +141,3 @@ export const getOwnerlist = async() => {
       console.error(error);
     });
 }
-*/
