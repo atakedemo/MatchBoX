@@ -7,18 +7,6 @@ import {
 
 const Header = () => {
     const [walletAddress, setWallet] = useState("");
-    //const [status, setStatus] = useState("");
-    
-    /*
-    useEffect(async () => {
-        const {address, status} = await getCurrentWalletConnected();
-        setWallet(address)
-        setStatus(status);
-    
-        addWalletListener(); 
-    }, []);
-    */
-
     useEffect(() => {
         async function checkWalletConnected() {
             if (window.ethereum) {
