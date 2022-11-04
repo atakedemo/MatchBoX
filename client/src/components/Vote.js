@@ -2,8 +2,8 @@ import React from 'react'
 
 const Portfolio = () => {
     return (
-        <div className="portforioContainer">
-            <h1 className="title">MatchBox</h1>
+        <div>
+            <h1>投票</h1>
         </div>
     );
 }

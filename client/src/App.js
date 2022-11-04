@@ -68,7 +68,7 @@ function App() {
                 <h3 className="h21">Connect your wallet</h3>
                 <h3>Connect more than one account to experience the full
                 potential of this app!</h3>
-                <button type="button" className="" onClick={connectWalletPressed}>Connect Metamask</button>
+                <button type="button" className="" onClick={connectWalletPressed}>🦊 Connect Metamask</button>
             </div>
         </div>
       </div>

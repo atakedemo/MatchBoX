@@ -8,7 +8,7 @@ const Navbar = () => {
             <ul className="navLinks">
              <li><a href='/portfolio' style={{ color: "#fff", textDecoration: 'none' }}>Portfolio</a></li>
              <li><a href='/trophies' style={{ color: "#fff", textDecoration: 'none' }}>Torophies</a></li>
-             <li><a href='/portfolio' style={{ color: "#fff", textDecoration: 'none' }}>Vote</a></li>
+             <li><a href='/vote' style={{ color: "#fff", textDecoration: 'none' }}>Vote</a></li>
             </ul>
 
             <ul className="navLinks2">
