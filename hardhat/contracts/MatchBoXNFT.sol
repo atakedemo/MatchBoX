@@ -5,8 +5,8 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-interface MatchBoXNFTLogic {
-    function checkCaller(address caller, address recipient) external returns (bool);
+interface IfMatchBoXNFTLogic {
+    function checkCaller(address caller, address recipient, uint id) external returns (bool);
 }
 
 contract MatchBoXNFT is ERC721URIStorage {
@@ -21,11 +21,11 @@ contract MatchBoXNFT is ERC721URIStorage {
     }
 
 
-    function mintNFT(address recipient, string memory tokenURI)
+    function mintNFT(address recipient, string memory tokenURI, uint id)
         public
         returns (uint256)
     {
-        require(checkTargetAddress(recipient));
+        require(checkTargetAddress(recipient, id));
         _tokenIds.increment();
         uint256 newItemId = _tokenIds.current();
         _mint(recipient, newItemId);
@@ -34,9 +34,9 @@ contract MatchBoXNFT is ERC721URIStorage {
         return newItemId;
     }
 
-    function checkTargetAddress(address recipient) private returns(bool) {
-        MatchBoXNFTLogic _logicContract = MatchBoXNFTLogic(addressLogic);
-        return _logicContract.checkCaller(msg.sender, recipient);
+    function checkTargetAddress(address recipient, uint id) private returns(bool) {
+        IfMatchBoXNFTLogic _logicContract = IfMatchBoXNFTLogic(addressLogic);
+        return _logicContract.checkCaller(msg.sender, recipient, id);
     }
 
     function upgradeAdminTo(address _address)

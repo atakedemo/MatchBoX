@@ -3,7 +3,13 @@ import axios from 'axios';
 
 //require("dotenv").config();
 const contractAddressMain = "0x8995bd38c2012c04a4e7dd6f3ed61b29b1c43aa2";
+const contractAddressTest = "0x68704f4c1cdc3d69D5c1c638023aC4f2E5F26E17"
+const contractABI = require("../abi/MatchBoXNFT.json");
+
 const alchemyKeyMain = "XscvLAKJpQlvfnMFXa9uRQmJgD5pji3V"
+const alchemyKeySub = "Y4KiBGzasGxB9NIVjniYgU_O1zjmuNGH"
+const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
+const web3 = createAlchemyWeb3(alchemyKeySub);
 
 
 //ウォレット（メタマスク）との接続
@@ -140,4 +146,29 @@ export const getOwnerlist = async() => {
     .catch(function (error) {
       console.error(error);
     });
+}
+
+//NFTのmint
+export const mintNFT = async(tokenURI, id) => {
+  window.contract = await new web3.eth.Contract(contractABI, contractAddressTest);
+  
+  const requestId = (typeof id == 'number')?id:parseInt(id);
+
+  const txParams = {
+    to: contractAddressTest,
+    from: window.ethereum.selectedAddress,
+    'data': window.contract.methods.mintNFT(window.ethereum.selectedAddress, tokenURI, requestId).encodeABI()
+  };
+  try {
+    const txHash = await window.ethereum
+      .request({
+        method: 'eth_sendTransaction',
+        params: [txParams],
+      })
+  } catch (error){
+    return {
+      success: false,
+      status: "Something went wrong: " + error.message
+    }
+  }
 }
