@@ -7,7 +7,7 @@ const contractAddressTest = "0x68704f4c1cdc3d69D5c1c638023aC4f2E5F26E17"
 const contractABI = require("../abi/MatchBoXNFT.json");
 
 const alchemyKeyMain = "XscvLAKJpQlvfnMFXa9uRQmJgD5pji3V"
-const alchemyKeySub = "Y4KiBGzasGxB9NIVjniYgU_O1zjmuNGH"
+const alchemyKeySub = "https://polygon-mumbai.g.alchemy.com/v2/Y4KiBGzasGxB9NIVjniYgU_O1zjmuNGH"
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKeySub);
 

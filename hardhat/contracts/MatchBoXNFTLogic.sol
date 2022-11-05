@@ -12,11 +12,11 @@ contract MatchBoXNFTLogic {
         addressAdmin = msg.sender;
     }
 
-    function checkCaller(address caller, address recipient) 
+    function checkCaller(address caller, address recipient, uint id) 
         public view returns (bool)
     {
         bool _result;
-        _result = caller == addressAdmin && recipient != address(0);
+        _result = (caller != address(0) && recipient != address(0));
         return _result;
     }
 
