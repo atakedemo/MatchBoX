@@ -86,8 +86,75 @@ nav .navLinks2 li {
 .playerContainer{
   display: flex;
   flex-flow: row;
-  height: 10vh;
-  margin-left: 35%;
+  margin-left: 20%;
+  width: 1200px;
+  text-align: center;
+}
+
+.pc2Item{
+  padding: 30px 50px;
+  text-align: center;
+}
+.pc2Item2{
+  padding: 30px 0px;
+  text-align: center;
+}
+
+.playerContainer2{
+  display: flex;
+  flex-flow: row;
+  margin-left: 20%;
+  width: 1000px;
+  text-align: center;
+  border: solid 0.1px rgb(58, 53, 77); 
+  border-radius: 50px;
+  background-color: rgb(58, 53, 77);
+}
+
+.TrophyDiscription{
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-left: 43%;
+  height: 6vh;
+  width: 1000px;
+  border: solid 0.1px rgb(58, 53, 77); 
+  border-radius: 50px;
+  background-color: rgb(58, 53, 77);
+  padding-top: 20px;
+}
+
+.TrophyDetail{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 1000px;
+    margin-left: 20%;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.TrophyItemGold{
+  padding: 20px 10px;
+  background-color: goldenrod;
+  border: solid 0.1px rgb(158,158,158); 
+}
+
+.TrophyItemSilver{
+  padding: 20px 10px;
+  background-color: silver;
+  border: solid 0.1px rgb(158,158,158); 
+}
+
+.TrophyItemBlonze{
+  padding: 20px 10px;
+  background-color: rgb(179, 111, 49);
+  border: solid 0.1px rgb(158, 158, 158); 
+}
+
+.playerItem2{
+  margin-left: 5%;
+  margin-top: 1%;
 }
 
 .playerItem p{
@@ -109,11 +176,25 @@ nav .navLinks2 li {
   margin-left: 35%;
 }
 
-.Score{
-  display: flex;
-  flex-flow: row;
-  margin-left: 43%;
+.ScoreTitle{
+  margin-left: -40%;
+  color: darkgray;
   font-size: 20px;
+}
+
+.Score{
+  margin-left: 20%;
+  font-size: 20px;
+}
+
+.Score th{
+  color: darkgray;
+}
+
+.Score td{
+  border: solid 0.1px rgb(58, 53, 77);  /* 枠線指定 */
+  padding: 10px 30px;      /* 余白指定 */
+  margin: 0 auto;
 }
 
 .DetailButton{

@@ -3,6 +3,7 @@ import iconImage from "../img/Bearko.jpg";　
 import blonde from "../img/blonde.png";　
 import silver from "../img/silver.png";　
 import gold from "../img/gold.png";　
+import MyCry from "../img/MyCry.jpg";　
 
 const Portfolio = () => {
     return (
@@ -14,30 +15,38 @@ const Portfolio = () => {
                 <div className="playerItem"><p> Bearko.eth </p></div>
             </div>
             <div className="scoreContainer">
-                <div className="Item">Score :  16800  </div>
                 <div className="Item"><img src={gold } alt="金トロフィー" width="30" height="30" border="0"></img></div>
-                <div className="Item">: 4 </div>
+                <div className="Item">: 2 </div>
                 <div className="Item"><img src={silver } alt="銀トロフィー" width="30" height="30" border="0"></img></div>
                 <div className="Item">: 1 </div>
                 <div className="Item"><img src={blonde } alt="銅トロフィー" width="30" height="30" border="0"></img></div>
                 <div className="Item">: 1 </div>
-                <div className="Item">MostPlaying :  MyCryptHeros </div>
+                <div className="Item">MostPlaying :  <img src={MyCry } alt="マイクリ" width="20" height="20" border="0"></img> My Crypt Heroes </div>
             </div>
             <div className="Welcome">
-                <h1>Welcome bearko.eth!!</h1>
-                <p>Looks like you've already won several trophies! Congrats!!</p>
-                <p>Let's look into into and mint your first BCG Trophies!</p>
+                Connect more than one account to experience the full potential of this dapp! 💡
+            </div>
+            <div className="ScoreTitle">
+            <h2>Your Achievements</h2>
             </div>
             <div className="Score">
-                <div className="Item"><img src={gold } alt="金トロフィー" width="30" height="30" border="0"></img></div>
-                <div className="Item"> : 4 </div>
-                <div className="Item"><img src={silver } alt="銀トロフィー" width="30" height="30" border="0"></img></div>
-                <div className="Item"> : 1 </div>
-                <div className="Item"><img src={blonde } alt="銅トロフィー" width="30" height="30" border="0"></img></div>
-                <div className="Item"> : 1 </div>
+            <table>
+                <tr>
+                    <th>GameTitle</th>
+                    <th>Gold</th>
+                    <th>Silver</th>
+                    <th>Bronze</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><img src={MyCry } alt="マイクリ" width="20" height="20" border="0"></img> My Crypt Heroes </td>
+                    <td><img src={gold } alt="金トロフィー" width="30" height="30" border="0"></img>　2</td>
+                    <td><img src={silver } alt="銀トロフィー" width="30" height="30" border="0"></img>　1</td>
+                    <td><img src={blonde } alt="銅トロフィー" width="30" height="30" border="0"></img>　1</td>
+                    <td><button type="button" className="DetailButton"><a href='/detail' style={{ color: "#fff", textDecoration: 'none' }}>Show Detail</a></button></td>
+                </tr>
+            </table>
             </div>
-            <p></p>
-            <button type="button" className="DetailButton"><a href='/detail' style={{ color: "#fff", textDecoration: 'none' }}>Show Detail</a></button>
 
         </div>
     );
