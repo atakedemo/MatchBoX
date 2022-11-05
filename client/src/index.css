@@ -71,7 +71,7 @@ nav .navLinks2 li {
 
 .title {
   margin: 0;
-  padding-right: 900px;
+  padding-right: 800px;
   font-size: 2.5rem;
   font-weight: 800;
   color: white;
@@ -81,6 +81,70 @@ nav .navLinks2 li {
   display: flex;
   flex-flow: column;
   margin-top: 5%;
+}
+
+.playerContainer{
+  display: flex;
+  flex-flow: row;
+  height: 10vh;
+  margin-left: 35%;
+}
+
+.playerItem p{
+  font-size: 30px;
+  color: darkgrey;
+  margin-left: 20%;
+  margin-top: 13%;
+  align-items: center;
+}
+
+.Welcome p{
+  color: darkgrey;
+}
+
+.scoreContainer{
+  display: flex;
+  flex-flow: row;
+  height: 10vh;
+  margin-left: 35%;
+}
+
+.Score{
+  display: flex;
+  flex-flow: row;
+  margin-left: 43%;
+  font-size: 20px;
+}
+
+.DetailButton{
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 10px;
+  border: none;
+  padding: 7px;
+  width: 200px;
+  text-align: center;
+  font-size: 16px;
+  background: rgb(74, 122, 211);
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  color: white;
+}
+
+.Item{
+  margin-top: 2%;
+  margin-left: 10px;
+  align-items : center;
+}
+
+.border-radius {
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  background-color: green;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
 }
 
 .walletConnect button{

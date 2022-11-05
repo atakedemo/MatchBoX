@@ -4,7 +4,7 @@ import blonde from "../img/blonde.png";　
 import silver from "../img/silver.png";　
 import gold from "../img/gold.png";　
 
-const Portfolio = () => {
+const PortDetail = () => {
     return (
         <div className="portforioContainer">
             <h1 className="title">BCG Portfolio</h1>
@@ -23,24 +23,11 @@ const Portfolio = () => {
                 <div className="Item">: 1 </div>
                 <div className="Item">MostPlaying :  MyCryptHeros </div>
             </div>
-            <div className="Welcome">
-                <h1>Welcome bearko.eth!!</h1>
-                <p>Looks like you've already won several trophies! Congrats!!</p>
-                <p>Let's look into into and mint your first BCG Trophies!</p>
-            </div>
-            <div className="Score">
-                <div className="Item"><img src={gold } alt="金トロフィー" width="30" height="30" border="0"></img></div>
-                <div className="Item"> : 4 </div>
-                <div className="Item"><img src={silver } alt="銀トロフィー" width="30" height="30" border="0"></img></div>
-                <div className="Item"> : 1 </div>
-                <div className="Item"><img src={blonde } alt="銅トロフィー" width="30" height="30" border="0"></img></div>
-                <div className="Item"> : 1 </div>
-            </div>
             <p></p>
-            <button type="button" className="DetailButton"><a href='/detail' style={{ color: "#fff", textDecoration: 'none' }}>Show Detail</a></button>
+            <button type="button" className="DetailButton">Show Detail</button>
 
         </div>
     );
 }
 
-export default Portfolio
+export default PortDetail

@@ -65,7 +65,7 @@ function App() {
         <div className="portforioContainer">
             <h1 className="title">MatchBox</h1>
             <div className="walletConnect">
-                <h3 className="h21">Connect your wallet</h3>
+                <h2 className="h21">Connect your wallet</h2>
                 <h3>Connect more than one account to experience the full
                 potential of this app!</h3>
                 <button type="button" className="" onClick={connectWalletPressed}>🦊 Connect Metamask</button>

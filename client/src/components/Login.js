@@ -52,8 +52,8 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <h1 id="headerTitle">MatchBoX</h1>
+        <div className="portforioContainer">
+            <h1 id="title">MatchBoX</h1>
             <button id="walletButton" onClick={connectWalletPressed}>
             {walletAddress.length > 0 ? (
                 "Connected: " +

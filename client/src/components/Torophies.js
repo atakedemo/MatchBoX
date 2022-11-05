@@ -39,9 +39,9 @@ const Torophies = () => {
     }, []);
 
     return (
-        <div>
-            <h1>トロフィー一覧</h1>
-        </div>
+      <div className="portforioContainer">
+        <h1 className="title">BCG Torophies</h1>
+      </div>
     );
 }
 
