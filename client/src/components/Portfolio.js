@@ -17,16 +17,6 @@ import { Button } from '@material-ui/core';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
-function createData(name, gold, silver, blonze) {
-    return { name, gold, silver, blonze};
-}
-
-const games = [
-    createData('My Crypt Heroes', 2, 1, 1),
-    createData('Crypto Spells', 0, 1, 1),
-    createData('Sprinterlands', 0, 0, 1)
-];
-
 const Portfolio = () => {
     const navigate = useNavigate();
     const [games, setGames] = useState([
