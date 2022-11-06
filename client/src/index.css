@@ -122,7 +122,27 @@ nav .navLinks2 li {
   border: solid 0.1px rgb(58, 53, 77); 
   border-radius: 50px;
   background-color: rgb(58, 53, 77);
-  padding-top: 20px;
+  padding: 10px;
+}
+
+.TrophyDiscription span{
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+.TrophyDiscItem01{
+  float: left;
+  padding: 10px;
+  margin-left: 40px;
+}
+
+.TrophyDiscItem02{
+  float: right;
+  border-radius: 50px;
+  margin-left: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(30,31,36);
 }
 
 .TrophyDetail{
@@ -185,7 +205,7 @@ nav .navLinks2 li {
 .Score{
   margin-left: 20%;
   font-size: 20px;
-  background-color: rgb(30,31,36);
+  background-color: rgb(16,18,19);
 }
 
 .ScoreTable{

@@ -8,14 +8,14 @@ import blonde from "../img/blonde.png";　
 import silver from "../img/silver.png";　
 import gold from "../img/gold.png";　
 import MyCry from "../img/MyCry.jpg";　
-import Dragon from "../img/Dragon.png";　
+import PeopleIcon from '@mui/icons-material/People';
 
 const contractAddressMain = "0x8995bd38c2012c04a4e7dd6f3ed61b29b1c43aa2";
 const alchemyKeyMain = "XscvLAKJpQlvfnMFXa9uRQmJgD5pji3V"
 
 const PortDetail = () => {
     const [torophies, setTorophies] = useState([]);
-    const [nowTorophy, setNowTorophy] = useState("Select Trophy to see more");
+    const [nowTorophy, setNowTorophy] = useState("");
     const [golds, setGold] = useState([]);
     const [silvers, setSilver] = useState([]);
     const [bronzes, setBronze] = useState([]);
@@ -82,11 +82,41 @@ const PortDetail = () => {
             return "TrophyItemBlonze"
         }
     }
-
-    function setInfoTorophy (tmpToropy) {
-        
+    
+    function setTorophyDetail () {
+        let tgtTorophy = {"name":"","rarity":"blonde"}
+        if (nowTorophy == "") {
+            return (
+                <div className="TrophyDiscription">
+                <span>Select Trophy to see more</span>
+                </div>
+            )
+        } else {
+            tgtTorophy = nowTorophy;
+            let tgtImg = blonde;
+            if(tgtTorophy.rarity == "Gold"){
+                tgtImg = gold;
+            } else if(tgtTorophy.rarity == "Silver"){
+                tgtImg = silver;
+            }
+            return (
+                <div className="TrophyDiscription">
+                    <div className='TrophyDiscItem01'>
+                        <img src={tgtImg} alt="金トロフィー" width="30" height="30" border="0"></img>
+                        <span>{tgtTorophy.name}</span>
+                    </div>
+                    <div className='TrophyDiscItem02'>
+                        <span>See Source </span>
+                    </div>
+                    <div className='TrophyDiscItem02'>
+                        <PeopleIcon/>
+                        <span>3 (0.001%) </span>
+                    </div>
+                </div>
+            )
+        }
     }
-        
+
     return (
         <div className="portforioContainer">
             <h1 className="title">BCG Portfolio</h1>
@@ -106,16 +136,14 @@ const PortDetail = () => {
                 Connect more than one account to experience the full potential of this dapp! 💡
             </div>
             <div className="ScoreTitle">
-            <h2>Your Achievements</h2>
-            <div className="TrophyDiscription">
-                Select Trophy to see more
-            </div>
+                <h2>Your Achievements</h2>
+                {setTorophyDetail(nowTorophy)}
             </div>
             <p></p>
             <div  className="TrophyDetail">
                 {torophies.map((torophy) => (
-                    <div className={setClass(torophy.rarity)}  key={torophy.name}>
-                        <a className={torophy.rarity} onClick={setNowTorophy(torophy.name)}>{torophy.name}</a>
+                    <div className={setClass(torophy.rarity)}  key={torophy.name} onClick={() => setNowTorophy(torophy)}>
+                        <div className={torophy.rarity}>{torophy.name}</div>
                     </div>
                 ))}
             </div>
