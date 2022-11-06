@@ -11,7 +11,7 @@ function  Main() {
     <div className='main'>
     <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={<Login/>} />
+        <Route exact path='/' element={<Portfolio/>} />
         <Route path='/portfolio' element={<Portfolio/>} />
         <Route path='/trophies' element={<Torophies/>}  />
         <Route path='/vote' element={<Vote/>}  />

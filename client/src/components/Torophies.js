@@ -7,35 +7,35 @@ const alchemyKeyMain = "XscvLAKJpQlvfnMFXa9uRQmJgD5pji3V"
 const Torophies = () => {
     const [torophies, setTorophies] = useState("");
     useEffect(() => {
-        async function getTorophylist() {
-            const apiUrl = "https://polygon-mainnet.g.alchemy.com/nft/v2/"
-            const apiKey = alchemyKeyMain;
-          
-            const options = {
-              method: 'GET',
-              url: apiUrl + apiKey + '/getNFTs',
-          
-              params: {
-                owner: window.ethereum.selectedAddress,
-                'contractAddresses[]': contractAddressMain,
-                withMetadata: 'true'
-              },
-              headers: {accept: 'application/json'}
-            };
-            axios
-              .request(options)
-              .then(function (response) {
-                console.log(response.data);
-                if(response.data.totalCount>0){
-                    setTorophies(response.data.ownedNfts);
-                }
-                
-              })
-              .catch(function (error) {
-                console.error(error);
-              });
-        }
-        getTorophylist();
+      async function getTorophylist() {
+          const apiUrl = "https://polygon-mainnet.g.alchemy.com/nft/v2/"
+          const apiKey = alchemyKeyMain;
+        
+          const options = {
+            method: 'GET',
+            url: apiUrl + apiKey + '/getNFTs',
+        
+            params: {
+              owner: window.ethereum.selectedAddress,
+              'contractAddresses[]': contractAddressMain,
+              withMetadata: 'true'
+            },
+            headers: {accept: 'application/json'}
+          };
+          axios
+            .request(options)
+            .then(function (response) {
+              console.log(response.data);
+              if(response.data.totalCount>0){
+                  setTorophies(response.data.ownedNfts);
+              }
+              
+            })
+            .catch(function (error) {
+              console.error(error);
+            });
+      }
+      getTorophylist();
     }, []);
 
     return (
