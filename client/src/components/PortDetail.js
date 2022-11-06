@@ -38,7 +38,7 @@ const PortDetail = () => {
             };
             
             //検証用
-            options.params.owner = "0xD958Ee1d2caFAc2d3D6B495528dEaD1B339896e5"
+            //options.params.owner = "0xD958Ee1d2caFAc2d3D6B495528dEaD1B339896e5"
 
             axios
             .request(options)
