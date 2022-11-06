@@ -24,13 +24,15 @@ const PortDetail = () => {
         async function getTorophyList () {
             const apiUrl = "https://polygon-mainnet.g.alchemy.com/nft/v2/"
             const apiKey = alchemyKeyMain;
+            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+            const account = accounts[0];
 
             const options = {
                 method: 'GET',
                 url: apiUrl + apiKey + '/getNFTs',
             
                 params: {
-                  owner: window.ethereum.selectedAddress,
+                  owner: account,
                   'contractAddresses[]': contractAddressMain,
                   withMetadata: 'true'
                 },
