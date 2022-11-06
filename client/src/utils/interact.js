@@ -108,6 +108,8 @@ export const getTorophylist = async() => {
       console.log(response.data);
       if(response.data.totalCount>0){
         return response.data.ownedNfts;
+      } else {
+        return [];
       }
       
     })

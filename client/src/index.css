@@ -185,6 +185,12 @@ nav .navLinks2 li {
 .Score{
   margin-left: 20%;
   font-size: 20px;
+  background-color: rgb(30,31,36);
+}
+
+.ScoreTable{
+  background-color: rgb(58, 53, 77);
+  color: darkgray;
 }
 
 .Score th{
@@ -192,9 +198,10 @@ nav .navLinks2 li {
 }
 
 .Score td{
-  border: solid 0.1px rgb(58, 53, 77);  /* 枠線指定 */
+  /*border: solid 0.1px rgb(58, 53, 77);  /* 枠線指定 */
   padding: 10px 30px;      /* 余白指定 */
   margin: 0 auto;
+  color: darkgray;
 }
 
 .DetailButton{
@@ -206,10 +213,10 @@ nav .navLinks2 li {
   width: 200px;
   text-align: center;
   font-size: 16px;
-  background: rgb(74, 122, 211);
+  background: rgb(74, 122, 211) !important;
   cursor: pointer;
   backdrop-filter: blur(5px);
-  color: white;
+  color: white !important;
 }
 
 .Item{
@@ -241,18 +248,4 @@ nav .navLinks2 li {
   cursor: pointer;
   backdrop-filter: blur(5px);
   color: white;
-}
-
-/*
-ヘッダー
-*/
-#headerTitle {
-  
-}
-
-#walletButton {
-  text-align: right;
-  float:right;
-  margin-bottom: 50px;
-  line-height: 16px;
 }
