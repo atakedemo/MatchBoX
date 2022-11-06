@@ -74,9 +74,16 @@ function App() {
       </div>
     );
   } else {
+    /*
     return (
       <div className="App">
         <Navbar />
+        <Main />
+      </div>
+    );
+    */
+    return (
+      <div className="App">
         <Main />
       </div>
     );

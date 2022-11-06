@@ -5,8 +5,8 @@ import blonze from "../img/blonde.png";
 import silver from "../img/silver.png";
 import gold from "../img/gold.png";
 import MyCry from "../img/MyCry.jpg";
-import CrySpe from "../img/Cryptospells.jpg";
-import SprLan from "../img/Sprinterlands.jpg"
+//import CrySpe from "../img/Cryptospells.jpg";
+//import SprLan from "../img/Sprinterlands.jpg"
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -20,9 +20,11 @@ import axios from 'axios';
 const Portfolio = () => {
     const navigate = useNavigate();
     const [games, setGames] = useState([
-        {'name':'My Crypt Heroes', 'img': MyCry,'gold':2, 'silver':1, 'bronze':1},
+        {'name':'My Crypto Heroes', 'img': MyCry,'gold':2, 'silver':1, 'bronze':1}
+        /*,
         {'name':'Crypto Spells', 'img': CrySpe,'gold':0, 'silver':1, 'bronze':1},
         {'name':'Sprinterlands', 'img': SprLan,'gold':0, 'silver':0, 'bronze':1}
+        */
     ]);
     const [golds, setGold] = useState([]);
     const [silvers, setSilver] = useState([]);
@@ -79,9 +81,7 @@ const Portfolio = () => {
         setSilver(silvers);
         setBronze(bronzes);
         tmpGames = [
-            {'name':'My Crypt Heroes', 'img': MyCry,'gold':golds.length, 'silver':silvers.length, 'bronze':bronzes.length},
-            {'name':'Crypto Spells', 'img': CrySpe,'gold':0, 'silver':1, 'bronze':1},
-            {'name':'Sprinterlands', 'img': SprLan,'gold':0, 'silver':0, 'bronze':1}
+            {'name':'My Crypto Heroes', 'img': MyCry,'gold':golds.length, 'silver':silvers.length, 'bronze':bronzes.length},
         ];
         setGames(tmpGames);
     };
@@ -101,7 +101,7 @@ const Portfolio = () => {
                 <div className="Item">: {silvers.length} </div>
                 <div className="Item"><img src={blonze } alt="銅トロフィー" width="30" height="30" border="0"></img></div>
                 <div className="Item">: {bronzes.length} </div>
-                <div className="Item">MostPlaying :  <img src={MyCry } alt="マイクリ" width="20" height="20" border="0"></img> My Crypt Heroes </div>
+                <div className="Item">MostPlaying :  <img src={MyCry } alt="マイクリ" width="20" height="20" border="0"></img> My Crypto Heroes </div>
             </div>
             <div className="Welcome">
                 Connect more than one account to experience the full potential of this dapp! 💡

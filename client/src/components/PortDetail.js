@@ -65,6 +65,7 @@ const PortDetail = () => {
             .map(nft => ({
                 rarity: nft.metadata.attributes[0].value,
                 name: nft.metadata.name,
+                description: nft.description,
             }));
         const golds = nftList.filter(nft => nft.metadata.attributes[0].value === 'Gold');
         const silvers = nftList.filter(nft => nft.metadata.attributes[0].value === 'Silver');
@@ -101,6 +102,7 @@ const PortDetail = () => {
             } else if(tgtTorophy.rarity == "Silver"){
                 tgtImg = silver;
             }
+            /*
             return (
                 <div className="TrophyDiscription">
                     <div className='TrophyDiscItem01'>
@@ -116,6 +118,19 @@ const PortDetail = () => {
                     </div>
                 </div>
             )
+            */
+            return (
+                <div className="TrophyDiscription">
+                    <div className='TrophyDiscItem01'>
+                        <img src={tgtImg} alt="金トロフィー" width="30" height="30" border="0"></img>
+                        <div className='TrophyDiscItemInfo'>
+                            <span className='infoName'>{tgtTorophy.name}</span>
+                            <br/>
+                            <span className='infoDesc'>{tgtTorophy.description}</span>
+                        </div>
+                    </div>
+                </div>
+            )
         }
     }
 
@@ -125,7 +140,7 @@ const PortDetail = () => {
             <p></p>
             <div className="playerContainer2">
                 <div className="playerItem2"><img src={iconImage } alt="アイコン" width="80" height="80" border="0"></img></div>
-                <div className="pc2Item"><img src={MyCry } alt="マイクリ" width="40" height="40" border="0"></img> My Crypt Heroes </div>
+                <div className="pc2Item"><img src={MyCry } alt="マイクリ" width="40" height="40" border="0"></img> My Crypto Heroes </div>
                 <div className="pc2Item"><img src={gold } alt="金トロフィー" width="30" height="30" border="0"></img></div>
                 <div className="pc2Item2">: {golds.length} </div>
                 <div className="pc2Item"><img src={silver } alt="銀トロフィー" width="30" height="30" border="0"></img></div>

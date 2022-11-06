@@ -132,8 +132,24 @@ nav .navLinks2 li {
 
 .TrophyDiscItem01{
   float: left;
-  padding: 10px;
   margin-left: 40px;
+}
+
+.TrophyDiscItem01 img{
+  margin-top: 5px;
+}
+
+.TrophyDiscItemInfo{
+  float: right;
+  text-align: left;
+}
+
+.TrophyDiscItemInfo .infoName{
+  font-size: 1.1rem;
+}
+
+.TrophyDiscItemInfo .infoDesc{
+  font-size: 0.8rem;
 }
 
 .TrophyDiscItem02{
