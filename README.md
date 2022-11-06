@@ -18,3 +18,6 @@ BCGの今後の発展のためにはコンテンツそのものを楽しんで�
     1. NFTミントの判定 ※実装途中：0x24fc344e49105fe55A9709f0B76bd5D9aC4FF6F8
     2. NFT本体（ERC721）：0x68704f4c1cdc3d69D5c1c638023aC4f2E5F26E17
 * サンプルサイト：https://djfohtcowafa8.cloudfront.net/
+
+# アーキテクチャ（実装途中）
+![Architecture](doc/architecture.png)
